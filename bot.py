@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 import discord
 from discord.ext import commands
+from modules import fetchgit
 
 
 load_dotenv()
@@ -20,5 +21,5 @@ async def on_ready():
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Avicii"))
 
 
-
+bot.add_command(fetchgit.getgit)
 bot.run(DISCORD_KEY)
